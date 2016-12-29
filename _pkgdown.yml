@@ -1,0 +1,27 @@
+templates:
+  params:
+    bootswatch: simplex
+    ganalytics: "UA-31640193-1"
+
+reference:
+  - title: Overview
+    contents:
+    - Rbiips-package
+  - title: BUGS model compilation
+    contents:
+    - extend-bugs
+    - biips_model
+    - biips-object
+  - title: Inference algorithms
+    contents:
+    - biips_smc_samples
+    - biips_smc_sensitivity
+    - biips_pimh_init
+    - pimh-object
+    - biips_pmmh_init
+    - pmmh-object
+  - title: Output analysis
+    contents:
+    - smcarray-object
+    - mcmcarray-object
+    - plot-methods
