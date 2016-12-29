@@ -1,0 +1,3 @@
+[submodule "src/biips"]
+	path = src/biips
+	url = git@github.com:biips/biips.git
