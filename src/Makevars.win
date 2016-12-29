@@ -5,8 +5,4 @@ OBJECTS = $(SOURCES:.cpp=.o) $(SOURCES_CC:.cc=.o)
 
 CXX_STD = CXX11
 
-PKG_CPPFLAGS = -I"$(BOOSTLIB)" -Ibiips/include/core -Ibiips/include/base -Ibiips/include/compiler
-
-## Use the R_HOME indirection to support installations of multiple R version
-
-PKG_LIBS = $(shell "${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" -e "Rcpp:::LdFlags()")
+PKG_CPPFLAGS = -Ibiips/include -Ibiips/include/core -Ibiips/include/base -Ibiips/include/compiler -Wno-unused-local-typedefs -Wno-sign-compare
