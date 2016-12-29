@@ -1,0 +1,13 @@
+bibentry(bibtype = "Article", 
+         header = "To cite rbiips in publications use:",
+         key = "todeschini2014biips",
+         title = "Biips: Software for {B}ayesian Inference with Interacting Particle Systems",
+         author =  personList(as.person("Adrien Todeschini"),
+                   as.person("Fran{\\c{c}}ois Caron"),
+                   as.person("Marc Fuentes"),
+                   as.person("Pierrick Legrand"),
+                   as.person("Pierre Del Moral")),
+         journal = "arXiv preprint arXiv:1412.3779",
+         year = "2014",
+         url = "http://arxiv.org/abs/1412.3779"
+)

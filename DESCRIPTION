@@ -1,9 +1,10 @@
+Encoding: UTF-8
 Package: rbiips
 Version: 0.10.1
 Title: Bayesian inference with interacting particle systems
 Authors@R: as.person(c(
     "Adrien Todeschini <adrien.todeschini@gmail.com> [aut, cre]",
-    "Francois Caron <francois.caron@stat.ox.ac.uk> [aut]",
+    "François Caron <francois.caron@stat.ox.ac.uk> [aut]",
     "Marc Fuentes <marc.fuentes@inria.fr> [ctb]",
     "Inria [cph]"))
 Contact: Adrien Todeschini <adrien.todeschini@gmail.com>
