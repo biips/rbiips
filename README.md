@@ -23,24 +23,24 @@ The typical workflow is the following:
 - Define the model in BUGS language (see the [JAGS User Manual][JAGS User Manual]
   for help) and the data.
 - Add custom functions or distributions with 
-  [`biips_add_function`](reference/extend-bugs.html) and 
-  [`biips_add_distribution`](reference/extend-bugs.html).
-- Compile the model with [`biips_model`](reference/biips_model.html)
+  [`biips_add_function`](https://biips.github.io/rbiips/reference/extend-bugs.html) and 
+  [`biips_add_distribution`](https://biips.github.io/rbiips/reference/extend-bugs.html).
+- Compile the model with [`biips_model`](https://biips.github.io/rbiips/reference/biips_model.html)
 - Run inference algorithms:
     - Analyse sensitivity to parameters with 
-      [`biips_smc_sensitivity`](reference/biips_smc_sensitivity.html).
+      [`biips_smc_sensitivity`](https://biips.github.io/rbiips/reference/biips_smc_sensitivity.html).
     - Run SMC filtering and smoothing algorithms with 
-      [`biips_smc_samples`](reference/biips_smc_samples.html).
+      [`biips_smc_samples`](https://biips.github.io/rbiips/reference/biips_smc_samples.html).
     - Run particle MCMC algorithms with 
-      [`biips_pimh_samples`](reference/pimh-object.html) or
-      [`biips_pmmh_samples`](reference/pmmh-object.html).
+      [`biips_pimh_samples`](https://biips.github.io/rbiips/reference/pimh-object.html) or
+      [`biips_pmmh_samples`](https://biips.github.io/rbiips/reference/pmmh-object.html).
 - Diagnose and analyze the output obtained as 
-  [`smcarray`](reference/smcarray-object.html) and 
-  [`mcmcarray`](reference/mcmcarray-object.html) objects with 
-  [`biips_summary`](reference/smcarray-object.html), 
-  [`biips_density`](reference/smcarray-object.html),
-  [`biips_hist`](reference/smcarray-object.html) and 
-  [`biips_table`](reference/smcarray-object.html)
+  [`smcarray`](https://biips.github.io/rbiips/reference/smcarray-object.html) and 
+  [`mcmcarray`](https://biips.github.io/rbiips/reference/mcmcarray-object.html) objects with 
+  [`biips_summary`](https://biips.github.io/rbiips/reference/smcarray-object.html), 
+  [`biips_density`](https://biips.github.io/rbiips/reference/smcarray-object.html),
+  [`biips_hist`](https://biips.github.io/rbiips/reference/smcarray-object.html) and 
+  [`biips_table`](https://biips.github.io/rbiips/reference/smcarray-object.html)
 
 Authors
 ----------
