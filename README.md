@@ -64,7 +64,7 @@ arXiv:1412.3779, Dec. 2014. [[preprint](http://arxiv.org/abs/1412.3779)]
 
 [Biips website]: https://biips.github.io
 [JAGS website]: http://mcmc-jags.sourceforge.net/
-[JAGS User Manual]: http://sourceforge.net/projects/mcmc-jags/files/Manuals/3.x/jags_user_manual.pdf/download
+[JAGS User Manual]: http://sourceforge.net/projects/mcmc-jags/files/Manuals/4.x/jags_user_manual.pdf/download
 
 Example 
 ----------

@@ -25,7 +25,7 @@ information.
 
 The typical workflow is the following:
 \itemize{
-  \item Define the model in BUGS language (see the \href{http://sourceforge.net/projects/mcmc-jags/files/Manuals/3.x/jags_user_manual.pdf/download}{JAGS User Manual}
+  \item Define the model in BUGS language (see the \href{http://sourceforge.net/projects/mcmc-jags/files/Manuals/4.x/jags_user_manual.pdf/download}{JAGS User Manual}
   for help) and the data.
   \item Add custom functions or distributions with
     \code{\link{biips_add_function}} and \code{\link{biips_add_distribution}}.
@@ -149,7 +149,7 @@ A. Todeschini, F.Caron, M. Fuentes, P. Legrand, P. Del Moral.
   \code{\link{mcmcarray}}, \code{\link{biips_diagnosis}}, \code{\link{biips_summary}},
   \code{\link{biips_density}}, \code{\link{biips_hist}}, \code{\link{biips_table}},
   \href{https://biips.github.io}{Biips website},
-  \href{http://sourceforge.net/projects/mcmc-jags/files/Manuals/3.x/jags_user_manual.pdf/download}{JAGS User Manual}
+  \href{http://sourceforge.net/projects/mcmc-jags/files/Manuals/4.x/jags_user_manual.pdf/download}{JAGS User Manual}
 }
 \keyword{package}
 
