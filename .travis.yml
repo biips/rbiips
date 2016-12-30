@@ -3,3 +3,10 @@
 language: R
 sudo: false
 cache: packages
+warnings_are_errors: false
+
+#env
+env:
+  global:
+  - MAKEFLAGS="-j2""
+  - USE_RTOOLS="true" ## to be able to use Remotes (i.e. packages from non-CRAN sources)

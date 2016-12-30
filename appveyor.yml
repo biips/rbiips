@@ -8,7 +8,8 @@ init:
         Import-Module '..\appveyor-tool.ps1'
 
 install:
-  ps: Bootstrap
+  - ps: Bootstrap
+  - ps: git submodule update --init --recursive
 
 # Adapt as necessary starting from here
 
@@ -21,6 +22,15 @@ test_script:
 on_failure:
   - 7z a failure.zip *.Rcheck\*
   - appveyor PushArtifact failure.zip
+
+
+environment:
+  global:
+    WARNINGS_ARE_ERRORS: 0
+    _R_CHECK_FORCE_SUGGESTS_: 0
+    R_ARCH: x64
+    USE_RTOOLS: true ## to be able to use Remotes (i.e. packages from non-CRAN sources)
+    MAKEFLAGS: -j2
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
@@ -40,3 +50,7 @@ artifacts:
 
   - path: '\*_*.zip'
     name: Bits
+
+
+cache:
+  - C:\RLibrary
