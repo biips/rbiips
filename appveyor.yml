@@ -28,7 +28,7 @@ environment:
   global:
     WARNINGS_ARE_ERRORS:
 
-matrix:
+  matrix:
   - R_VERSION: devel
     GCC_PATH: mingw_32
 
