@@ -52,7 +52,7 @@ release_questions <- function() {
 #'   \itemize{
 #'     \item \href{http://adrien.tspace.fr}{Adrien
 #'     Todeschini}
-#'     \item \href{http://www.stats.ox.ac.uk/~caron/}{Francois Caron}
+#'     \item \href{http://www.stats.ox.ac.uk/~caron/}{François Caron}
 #'     \item Marc Fuentes
 #'   }
 #' \pkg{rbiips} is adapted from \pkg{rjags} interface for
@@ -64,11 +64,13 @@ release_questions <- function() {
 #'   \code{\link{biips_density}}, \code{\link{biips_hist}}, \code{\link{biips_table}},
 #'   \href{https://biips.github.io}{Biips website},
 #'   \href{http://sourceforge.net/projects/mcmc-jags/files/Manuals/4.x/jags_user_manual.pdf/download}{JAGS User Manual}
-#' @references A. Todeschini, F.Caron, M. Fuentes, P. Legrand, P. Del Moral. 
+#' @references Adrien Todeschini, François Caron, Marc Fuentes, Pierrick Legrand, Pierre Del Moral (2014).
 #'   Biips: Software for Bayesian Inference with Interacting Particle Systems. 
-#'   arXiv:1412.3779, Dec. 2014. \href{http://arxiv.org/abs/1412.3779}{preprint}
+#'   arXiv preprint arXiv:1412.3779.
+#'   URL \url{http://arxiv.org/abs/1412.3779}
 #' @keywords package
 #' @useDynLib rbiips
+#' @importFrom Rcpp evalCpp
 #' @examples
 #' #' # Add custom functions and distributions to BUGS language
 #' #' Add custom function `f`

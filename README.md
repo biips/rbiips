@@ -50,7 +50,7 @@ Authors
 [Inria Bordeaux Sud-Ouest](http://www.inria.fr/en/centre/bordeaux).
 
 - [Adrien Todeschini](http://adrien.tspace.fr)
-- [Francois Caron](http://www.stats.ox.ac.uk/~caron/)
+- [François Caron](http://www.stats.ox.ac.uk/~caron/)
 - Marc Fuentes
 
 **rbiips** is adapted from the 
@@ -59,9 +59,10 @@ for [JAGS][JAGS website].
 
 References
 -------------
-A. Todeschini, F.Caron, M. Fuentes, P. Legrand, P. Del Moral. 
+Adrien Todeschini, François Caron, Marc Fuentes, Pierrick Legrand, Pierre Del Moral (2014). 
 Biips: Software for Bayesian Inference with Interacting Particle Systems. 
-arXiv:1412.3779, Dec. 2014. [[preprint](http://arxiv.org/abs/1412.3779)]
+arXiv preprint arXiv:1412.3779. 
+URL <http://arxiv.org/abs/1412.3779>.
 
 [Biips website]: https://biips.github.io
 [JAGS website]: http://mcmc-jags.sourceforge.net/

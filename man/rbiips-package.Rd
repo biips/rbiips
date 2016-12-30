@@ -131,16 +131,17 @@ plot(biips_table(out_pmmh[['c[2:10]']]))
   \itemize{
     \item \href{http://adrien.tspace.fr}{Adrien
     Todeschini}
-    \item \href{http://www.stats.ox.ac.uk/~caron/}{Francois Caron}
+    \item \href{http://www.stats.ox.ac.uk/~caron/}{François Caron}
     \item Marc Fuentes
   }
 \pkg{rbiips} is adapted from \pkg{rjags} interface for
   \href{http://mcmc-jags.sourceforge.net/}{JAGS}.
 }
 \references{
-A. Todeschini, F.Caron, M. Fuentes, P. Legrand, P. Del Moral. 
+Adrien Todeschini, François Caron, Marc Fuentes, Pierrick Legrand, Pierre Del Moral (2014).
   Biips: Software for Bayesian Inference with Interacting Particle Systems. 
-  arXiv:1412.3779, Dec. 2014. \href{http://arxiv.org/abs/1412.3779}{preprint}
+  arXiv preprint arXiv:1412.3779.
+  URL \url{http://arxiv.org/abs/1412.3779}
 }
 \seealso{
 \code{\link{biips_add_function}}, \code{\link{biips_add_distribution}},

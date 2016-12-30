@@ -142,9 +142,10 @@ information.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>A. Todeschini, F.Caron, M. Fuentes, P. Legrand, P. Del Moral. 
+    <p>Adrien Todeschini, François Caron, Marc Fuentes, Pierrick Legrand, Pierre Del Moral (2014).
   Biips: Software for Bayesian Inference with Interacting Particle Systems. 
-  arXiv:1412.3779, Dec. 2014. <a href = 'preprint'>http://arxiv.org/abs/1412.3779</a></p>
+  arXiv preprint arXiv:1412.3779.
+  URL <a href = 'http://arxiv.org/abs/1412.3779'>http://arxiv.org/abs/1412.3779</a></p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -231,7 +232,7 @@ information.</p>
                              <span class='kw'>rs_thres</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>rs_type</span> <span class='kw'>=</span> <span class='st'>'stratified'</span>)</div><div class='output co'>#&gt; * Assigning node samplers
 #&gt; * Running SMC forward sampler with 100 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 10 iterations in 0.05 s</div><div class='input'>
+#&gt;   |**************************************************| 10 iterations in 0.04 s</div><div class='input'>
 <span class='fu'><a href='smcarray-object.html'>biips_diagnosis</a></span>(<span class='no'>out_smc</span>)</div><div class='output co'>#&gt; * Diagnosis of variable: c[2:10] 
 #&gt;   Filtering: GOOD
 #&gt;   Smoothing: GOOD
@@ -270,9 +271,9 @@ information.</p>
 <span class='no'>n_part</span> <span class='kw'>&lt;-</span> <span class='fl'>50</span>
 <span class='no'>obj_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_pimh_init.html'>biips_pimh_init</a></span>(<span class='no'>model</span>, <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>))  <span class='co'># Initialize</span></div><div class='output co'>#&gt; * Initializing PIMH</div><div class='input'><span class='no'>out_pimh_burn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_update</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Burn-in</span></div><div class='output co'>#&gt; * Updating PIMH with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 2.18 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_samples</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
+#&gt;   |**************************************************| 100 iterations in 2.26 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_samples</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 2.21 s</div><div class='input'>
+#&gt;   |**************************************************| 100 iterations in 2.12 s</div><div class='input'>
 <span class='fu'><a href='smcarray-object.html'>biips_summary</a></span>(<span class='no'>out_pimh</span>)</div><div class='output co'>#&gt; x mcmcarray:
 #&gt; $mean
 #&gt;  [1]  -1.870618 -12.559227 -10.877782 -17.467054  -3.043739   5.812422
@@ -291,7 +292,7 @@ information.</p>
 <span class='no'>logtau_val</span> <span class='kw'>&lt;-</span> -<span class='fl'>10</span>:<span class='fl'>10</span>
 <span class='no'>out_sens</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_smc_sensitivity.html'>biips_smc_sensitivity</a></span>(<span class='no'>model</span>, <span class='fu'>list</span>(<span class='kw'>logtau</span> <span class='kw'>=</span> <span class='no'>logtau_val</span>), <span class='no'>n_part</span>)</div><div class='output co'>#&gt; * Analyzing sensitivity with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 21 iterations in 0.45 s</div><div class='input'>
+#&gt;   |**************************************************| 21 iterations in 0.47 s</div><div class='input'>
 <span class='co'>#' # PMMH algorithm</span>
 <span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>tmax</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>.5</span>, <span class='fl'>.5</span>), <span class='kw'>logtau_true</span> <span class='kw'>=</span> <span class='fu'>log</span>(<span class='fl'>1</span>))
 <span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_model.html'>biips_model</a></span>(<span class='no'>modelfile</span>, <span class='no'>data</span>)</div><div class='output co'>#&gt; * Parsing model in: /home/adrien-alea/Dropbox/workspace/rbiips/inst/extdata/hmm_f.bug
@@ -313,7 +314,7 @@ information.</p>
 #&gt;   |--------------------------------------------------| 100%
 #&gt;   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 2.16 s</div><div class='input'><span class='no'>out_pmmh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pmmh-object.html'>biips_pmmh_samples</a></span>(<span class='no'>obj_pmmh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>, <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>1</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating 100 PMMH samples with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 2.14 s</div><div class='input'>
+#&gt;   |**************************************************| 100 iterations in 2.19 s</div><div class='input'>
 <span class='fu'><a href='smcarray-object.html'>biips_summary</a></span>(<span class='no'>out_pmmh</span>)</div><div class='output co'>#&gt; logtau mcmcarray:
 #&gt; $mean
 #&gt; [1] 0.63332
@@ -358,7 +359,7 @@ information.</p>
 <li> <a href = 'Adrien
     Todeschini'>http://adrien.tspace.fr</a>
     </li>
-<li> <a href = 'Francois Caron'>http://www.stats.ox.ac.uk/~caron/</a>
+<li> <a href = 'François Caron'>http://www.stats.ox.ac.uk/~caron/</a>
     </li>
 <li> Marc Fuentes
   </li>

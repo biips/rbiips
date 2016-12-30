@@ -67,7 +67,7 @@
   <div class="col-md-9">
     <div class="page-header toc-ignore">
       <h1>Quick examples of rbiips usage</h1>
-                        <h4 class="author">Adrien Todeschini, Francois Caron</h4>
+                        <h4 class="author">Adrien Todeschini, François Caron</h4>
             
             <h4 class="date">2016-12-30</h4>
           </div>
@@ -416,7 +416,7 @@ out_smc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/bii
                              <span class="dt">rs_thres =</span> <span class="fl">0.5</span>, <span class="dt">rs_type =</span> <span class="st">'stratified'</span>)</code></pre></div>
 <pre><code>## * Running SMC forward sampler with 100 particles
 ##   |--------------------------------------------------| 100%
-##   |**************************************************| 10 iterations in 0.04 s</code></pre>
+##   |**************************************************| 10 iterations in 0.05 s</code></pre>
 <p>Manipulate <code>smcarray.fsb.list</code> object</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/smcarray-object.html">is.smcarray.fsb.list</a></span>(out_smc)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
@@ -759,11 +759,11 @@ obj_pimh &lt;-<span class="st"> </span><span class="kw"><a href="../reference/bi
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">out_pimh_burn &lt;-<span class="st"> </span><span class="kw"><a href="../reference/pimh-object.html">biips_pimh_update</a></span>(obj_pimh, <span class="dv">100</span>, n_part)  <span class="co"># Burn-in</span></code></pre></div>
 <pre><code>## * Updating PIMH with 50 particles
 ##   |--------------------------------------------------| 100%
-##   |**************************************************| 100 iterations in 0.32 s</code></pre>
+##   |**************************************************| 100 iterations in 0.33 s</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">out_pimh &lt;-<span class="st"> </span><span class="kw"><a href="../reference/pimh-object.html">biips_pimh_samples</a></span>(obj_pimh, <span class="dv">100</span>, n_part)  <span class="co"># Samples</span></code></pre></div>
 <pre><code>## * Generating PIMH samples with 50 particles
 ##   |--------------------------------------------------| 100%
-##   |**************************************************| 100 iterations in 0.33 s</code></pre>
+##   |**************************************************| 100 iterations in 0.32 s</code></pre>
 <p>Manipulate <code>mcmcarray.list</code> object</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/mcmcarray-object.html">is.mcmcarray.list</a></span>(out_pimh)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
@@ -941,7 +941,7 @@ logtau_val &lt;-<span class="st"> </span>-<span class="dv">10</span>:<span class
 out_sens &lt;-<span class="st"> </span><span class="kw"><a href="../reference/biips_smc_sensitivity.html">biips_smc_sensitivity</a></span>(model, <span class="kw">list</span>(<span class="dt">logtau =</span> logtau_val), n_part)</code></pre></div>
 <pre><code>## * Analyzing sensitivity with 50 particles
 ##   |--------------------------------------------------| 100%
-##   |**************************************************| 21 iterations in 0.07 s</code></pre>
+##   |**************************************************| 21 iterations in 0.08 s</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))
 <span class="kw">plot</span>(logtau_val, out_sens$log_marg_like, <span class="dt">type =</span> <span class="st">'l'</span>, <span class="dt">col =</span> <span class="st">'blue'</span>, 
      <span class="dt">xlab =</span> <span class="st">'logtau'</span>, <span class="dt">ylab =</span> <span class="st">'log p(y|logtau) '</span>, <span class="dt">main =</span> <span class="st">'SMC sensitivity'</span>)
@@ -1010,11 +1010,11 @@ obj_pmmh &lt;-<span class="st"> </span><span class="kw"><a href="../reference/bi
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">out_pmmh_burn &lt;-<span class="st"> </span><span class="kw"><a href="../reference/pmmh-object.html">biips_pmmh_update</a></span>(obj_pmmh, <span class="dv">100</span>, n_part)  <span class="co"># Burn-in</span></code></pre></div>
 <pre><code>## * Adapting PMMH with 50 particles
 ##   |--------------------------------------------------| 100%
-##   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 0.39 s</code></pre>
+##   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 0.35 s</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">out_pmmh &lt;-<span class="st"> </span><span class="kw"><a href="../reference/pmmh-object.html">biips_pmmh_samples</a></span>(obj_pmmh, <span class="dv">100</span>, n_part, <span class="dt">thin =</span> <span class="dv">1</span>)  <span class="co"># Samples</span></code></pre></div>
 <pre><code>## * Generating 100 PMMH samples with 50 particles
 ##   |--------------------------------------------------| 100%
-##   |**************************************************| 100 iterations in 0.40 s</code></pre>
+##   |**************************************************| 100 iterations in 0.35 s</code></pre>
 <p>Manipulate <code>mcmcarray.list</code> object</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/mcmcarray-object.html">is.mcmcarray.list</a></span>(out_pmmh)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>

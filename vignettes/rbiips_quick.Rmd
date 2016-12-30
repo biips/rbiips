@@ -1,6 +1,6 @@
 ---
 title: 'Quick examples of rbiips usage'
-author: 'Adrien Todeschini, Francois Caron'
+author: 'Adrien Todeschini, François Caron'
 date: '`r Sys.Date()`'
 output:
   rmarkdown::html_vignette:
