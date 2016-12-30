@@ -68,6 +68,9 @@
 <li>
   <a href="../articles/index.html">Articles</a>
 </li>
+<li>
+  <a href="../news/index.html">News</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -228,7 +231,7 @@ information.</p>
                              <span class='kw'>rs_thres</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>rs_type</span> <span class='kw'>=</span> <span class='st'>'stratified'</span>)</div><div class='output co'>#&gt; * Assigning node samplers
 #&gt; * Running SMC forward sampler with 100 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 10 iterations in 0.04 s</div><div class='input'>
+#&gt;   |**************************************************| 10 iterations in 0.05 s</div><div class='input'>
 <span class='fu'><a href='smcarray-object.html'>biips_diagnosis</a></span>(<span class='no'>out_smc</span>)</div><div class='output co'>#&gt; * Diagnosis of variable: c[2:10] 
 #&gt;   Filtering: GOOD
 #&gt;   Smoothing: GOOD
@@ -267,9 +270,9 @@ information.</p>
 <span class='no'>n_part</span> <span class='kw'>&lt;-</span> <span class='fl'>50</span>
 <span class='no'>obj_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_pimh_init.html'>biips_pimh_init</a></span>(<span class='no'>model</span>, <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>))  <span class='co'># Initialize</span></div><div class='output co'>#&gt; * Initializing PIMH</div><div class='input'><span class='no'>out_pimh_burn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_update</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Burn-in</span></div><div class='output co'>#&gt; * Updating PIMH with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 2.30 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_samples</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
+#&gt;   |**************************************************| 100 iterations in 2.18 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_samples</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 2.06 s</div><div class='input'>
+#&gt;   |**************************************************| 100 iterations in 2.21 s</div><div class='input'>
 <span class='fu'><a href='smcarray-object.html'>biips_summary</a></span>(<span class='no'>out_pimh</span>)</div><div class='output co'>#&gt; x mcmcarray:
 #&gt; $mean
 #&gt;  [1]  -1.870618 -12.559227 -10.877782 -17.467054  -3.043739   5.812422
@@ -308,9 +311,9 @@ information.</p>
 <span class='no'>obj_pmmh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_pmmh_init.html'>biips_pmmh_init</a></span>(<span class='no'>model</span>, <span class='st'>'logtau'</span>, <span class='kw'>latent_names</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>),
                             <span class='kw'>inits</span> <span class='kw'>=</span> <span class='fu'>list</span>(<span class='kw'>logtau</span> <span class='kw'>=</span> -<span class='fl'>2</span>))  <span class='co'># Initialize</span></div><div class='output co'>#&gt; * Initializing PMMH</div><div class='input'><span class='no'>out_pmmh_burn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pmmh-object.html'>biips_pmmh_update</a></span>(<span class='no'>obj_pmmh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Burn-in</span></div><div class='output co'>#&gt; * Adapting PMMH with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 2.20 s</div><div class='input'><span class='no'>out_pmmh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pmmh-object.html'>biips_pmmh_samples</a></span>(<span class='no'>obj_pmmh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>, <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>1</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating 100 PMMH samples with 50 particles
+#&gt;   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 2.16 s</div><div class='input'><span class='no'>out_pmmh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pmmh-object.html'>biips_pmmh_samples</a></span>(<span class='no'>obj_pmmh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>, <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>1</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating 100 PMMH samples with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 2.13 s</div><div class='input'>
+#&gt;   |**************************************************| 100 iterations in 2.14 s</div><div class='input'>
 <span class='fu'><a href='smcarray-object.html'>biips_summary</a></span>(<span class='no'>out_pmmh</span>)</div><div class='output co'>#&gt; logtau mcmcarray:
 #&gt; $mean
 #&gt; [1] 0.63332
@@ -369,7 +372,7 @@ information.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Adrien Todeschini, Francois Caron.</p>
+  <p>Developed by Adrien Todeschini, François Caron.</p>
 </div>
 
 <div class="pkgdown">

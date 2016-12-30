@@ -68,6 +68,9 @@
 <li>
   <a href="../articles/index.html">Articles</a>
 </li>
+<li>
+  <a href="../news/index.html">News</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -218,7 +221,7 @@ See <code><a href='biips_smc_samples.html'>biips_smc_samples</a></code>  for mor
 <span class='no'>n_part</span> <span class='kw'>&lt;-</span> <span class='fl'>50</span>
 <span class='no'>obj_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_pimh_init.html'>biips_pimh_init</a></span>(<span class='no'>model</span>, <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>))  <span class='co'># Initialize</span></div><div class='output co'>#&gt; * Initializing PIMH</div><div class='input'><span class='fu'>is.pimh</span>(<span class='no'>obj_pimh</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='no'>out_pimh_burn</span> <span class='kw'>&lt;-</span> <span class='fu'>biips_pimh_update</span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Burn-in</span></div><div class='output co'>#&gt; * Updating PIMH with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 0.32 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'>biips_pimh_samples</span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
+#&gt;   |**************************************************| 100 iterations in 0.33 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'>biips_pimh_samples</span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
 #&gt;   |--------------------------------------------------| 100%
 #&gt;   |**************************************************| 100 iterations in 0.33 s</div><div class='input'>
 <span class='no'>summ_pimh_x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='smcarray-object.html'>biips_summary</a></span>(<span class='no'>out_pimh</span>$<span class='no'>x</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>probs</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0.025</span>, <span class='fl'>0.975</span>))
@@ -228,11 +231,10 @@ See <code><a href='biips_smc_samples.html'>biips_smc_samples</a></code>  for mor
 
 <span class='fu'>par</span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>1</span>))
 <span class='fu'>plot</span>(<span class='fu'>c</span>(<span class='no'>out_pimh_burn</span>$<span class='no'>log_marg_like</span>, <span class='no'>out_pimh</span>$<span class='no'>log_marg_like</span>), <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'l'</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'blue'</span>,
-     <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>'PIMH iteration'</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>'log p(y)'</span>)
-
+     <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>'PIMH iteration'</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>'log p(y)'</span>)</div><div class='output co'>#&gt; <span class='error'>Error in plot.new(): figure margins too large</span></div><div class='input'>
 <span class='no'>t</span> <span class='kw'>&lt;-</span> <span class='fl'>5</span>
 <span class='fu'>plot</span>(<span class='no'>out_pimh</span>$<span class='no'>x</span>[<span class='no'>t</span>, ], <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'l'</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'blue'</span>, <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>'PIMH iteration'</span>,
-     <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='fu'>paste0</span>(<span class='st'>'x['</span>,<span class='no'>t</span>,<span class='st'>']'</span>))</div><div class='input'><span class='fu'>points</span>(<span class='fl'>0</span>, <span class='no'>model</span>$<span class='fu'>data</span>()$<span class='no'>x_true</span>[<span class='no'>t</span>], <span class='kw'>pch</span> <span class='kw'>=</span> <span class='fl'>17</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'green'</span>)</div><img src='pimh-object-15.png' alt='' width='540' height='400' /><div class='input'>
+     <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='fu'>paste0</span>(<span class='st'>'x['</span>,<span class='no'>t</span>,<span class='st'>']'</span>))</div><div class='output co'>#&gt; <span class='error'>Error in plot.new(): figure margins too large</span></div><div class='input'><span class='fu'>points</span>(<span class='fl'>0</span>, <span class='no'>model</span>$<span class='fu'>data</span>()$<span class='no'>x_true</span>[<span class='no'>t</span>], <span class='kw'>pch</span> <span class='kw'>=</span> <span class='fl'>17</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'green'</span>)</div><div class='output co'>#&gt; <span class='error'>Error in plot.xy(xy.coords(x, y), type = type, ...): plot.new has not been called yet</span></div><div class='input'>
 <span class='fu'>par</span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>2</span>))
 <span class='fu'>plot</span>(<span class='no'>model</span>$<span class='fu'>data</span>()$<span class='no'>x_true</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'l'</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'green'</span>, <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>'t'</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>'x[t]'</span>)
 <span class='fu'>lines</span>(<span class='no'>summ_pimh_x</span>$<span class='no'>mean</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'blue'</span>)
@@ -252,7 +254,8 @@ See <code><a href='biips_smc_samples.html'>biips_smc_samples</a></code>  for mor
 <span class='fu'>plot</span>(<span class='no'>dens_pimh_x</span><span class='kw'>[[</span><span class='no'>t</span>]], <span class='kw'>col</span><span class='kw'>=</span><span class='st'>'blue'</span>, <span class='kw'>main</span> <span class='kw'>=</span> , <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>'posterior density'</span>)
 <span class='fu'>points</span>(<span class='no'>model</span>$<span class='fu'>data</span>()$<span class='no'>x_true</span>[<span class='no'>t</span>], <span class='fl'>0</span>, <span class='kw'>pch</span> <span class='kw'>=</span> <span class='fl'>17</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'green'</span>)
 
-<span class='fu'>plot</span>(<span class='no'>table_pimh_c</span><span class='kw'>[[</span><span class='no'>t</span>-<span class='fl'>1</span>]], <span class='kw'>col</span><span class='kw'>=</span><span class='st'>'blue'</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>'posterior probability mass'</span>)</div><div class='input'><span class='fu'>points</span>(<span class='no'>model</span>$<span class='fu'>data</span>()$<span class='no'>c_true</span>[<span class='no'>t</span>], <span class='fl'>0</span>, <span class='kw'>pch</span> <span class='kw'>=</span> <span class='fl'>17</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'green'</span>)</div><img src='pimh-object-18.png' alt='' width='540' height='400' /></pre>
+<span class='fu'>plot</span>(<span class='no'>table_pimh_c</span><span class='kw'>[[</span><span class='no'>t</span>-<span class='fl'>1</span>]], <span class='kw'>col</span><span class='kw'>=</span><span class='st'>'blue'</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>'posterior probability mass'</span>)
+<span class='fu'>points</span>(<span class='no'>model</span>$<span class='fu'>data</span>()$<span class='no'>c_true</span>[<span class='no'>t</span>], <span class='fl'>0</span>, <span class='kw'>pch</span> <span class='kw'>=</span> <span class='fl'>17</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'green'</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -273,7 +276,7 @@ See <code><a href='biips_smc_samples.html'>biips_smc_samples</a></code>  for mor
 
       <footer>
       <div class="copyright">
-  <p>Developed by Adrien Todeschini, Francois Caron.</p>
+  <p>Developed by Adrien Todeschini, François Caron.</p>
 </div>
 
 <div class="pkgdown">

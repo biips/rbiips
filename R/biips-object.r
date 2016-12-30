@@ -18,15 +18,15 @@
 #' data <- list(tmax = 10, p = c(.5, .5), logtau_true = log(1), logtau = log(1))
 #' model <- biips_model(modelfile, data, sample_data = TRUE)
 #'
-#' \dontrun{
-#' tmax <- 10
-#' p <- c(.5, .5)
-#' logtau_true <- log(1)
-#' logtau <- logtau_true
+#' #\dontrun{
+#' #tmax <- 10
+#' #p <- c(.5, .5)
+#' #logtau_true <- log(1)
+#' #logtau <- logtau_true
 #'
-#' datanames <- c('tmax', 'p', 'logtau_true', 'logtau')
-#' model <- biips_model(modelfile, datanames, sample_data = TRUE)
-#' }
+#' #datanames <- c('tmax', 'p', 'logtau_true', 'logtau')
+#' #model <- biips_model(modelfile, datanames, sample_data = TRUE)
+#' #}
 #'
 #' is.biips(model)
 #' print(model)
@@ -38,11 +38,11 @@
 #'
 #' biips_nodes(model)
 #'
-#' \dontrun{
-#' dotfile <- 'hmm.dot'
-#' biips_print_dot(model, dotfile)
-#' cat(readLines(dotfile), sep = '\n')
-#' }
+#' #\dontrun{
+#' #dotfile <- 'hmm.dot'
+#' #biips_print_dot(model, dotfile)
+#' #cat(readLines(dotfile), sep = '\n')
+#' #}
 #'
 #' biips_build_sampler(model, proposal = 'prior')
 #' biips_nodes(model, type = 'stoch', observed = FALSE)

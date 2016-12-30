@@ -1,6 +1,6 @@
 Encoding: UTF-8
 Package: rbiips
-Version: 0.10.1
+Version: 0.11.0
 Title: Bayesian inference with interacting particle systems
 Authors@R: as.person(c(
     "Adrien Todeschini <adrien.todeschini@gmail.com> [aut, cre]",

@@ -1,3 +1,11 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 CMakeLists.txt
+.*\.sed
+src/biips/\.git
+_pkgdown\.yml
+docs
+.*\.o
+.*\.IN
+^\.travis\.yml$
+^appveyor\.yml$

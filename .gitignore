@@ -2,4 +2,6 @@
 .Rhistory
 .RData
 *.o
+*.so
 *.dll
+inst/doc
