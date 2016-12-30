@@ -9,7 +9,7 @@ init:
 
 install:
   - ps: Bootstrap
-  - ps: git submodule update --init --recursive
+  - git submodule update --init --recursive
 
 # Adapt as necessary starting from here
 
