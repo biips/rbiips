@@ -1,8 +1,11 @@
 ## Test environments
-* local ubuntu 16.04 64-bit, R 3.3.2
-* local OS X 10.8, R 3.1.2
-* local windows 7 64-bit, R 3.3.2
-* win-builder (devel)
+* local: Ubuntu Xenial 16.04 x64, R 3.3.2
+* local: Windows 7 x64, R 3.3.2
+* travis-ci: Ubuntu Precise 12.04 64-bit, R devel
+* travis-ci: OS X El Capitan 10.11.6, R devel
+* appveyor: Windows Server 2012 R2 i386, R devel
+* appveyor: Windows Server 2012 R2 x64, R devel
+* win-builder, R devel
 
 ## R CMD check results
 Status: 2 WARNINGs, 2 NOTEs
