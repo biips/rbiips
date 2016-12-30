@@ -1,8 +1,8 @@
 SOURCES = $(wildcard *.cpp biips/src/core/*.cpp biips/src/core/*/*.cpp biips/src/base/*.cpp biips/src/base/*/*.cpp biips/src/compiler/*.cpp biips/src/compiler/*/*.cpp)
-SOURCES_CC = $(wildcard biips/src/compiler/*/*.cc)
+SOURCES_CC = $(wildcard biips/src/compiler/compiler/*.cc)
 
 OBJECTS = $(SOURCES:.cpp=.o) $(SOURCES_CC:.cc=.o)
 
 CXX_STD = CXX11
 
-PKG_CPPFLAGS = -Ibiips/include -Ibiips/include/core -Ibiips/include/base -Ibiips/include/compiler -Wno-unused-local-typedefs -Wno-sign-compare
+PKG_CPPFLAGS = -Ibiips/include/core -Ibiips/include/base -Ibiips/include/compiler -Wno-unused-local-typedefs -Wno-sign-compare

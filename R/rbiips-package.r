@@ -1,7 +1,8 @@
 release_questions <- function() {
   c(
     "Have you updated the docs? devtools::document()",
-    "Have you updated the website? pkgdown::build_site()"
+    "Have you updated the website? pkgdown::build_site()",
+    "Have you pulled biips submodule? cd src/biips; git pull"
   )
 }
 
