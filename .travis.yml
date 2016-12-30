@@ -5,7 +5,6 @@ os:
   - osx
   
 language: r
-r: devel
 sudo: false
 cache: packages
 warnings_are_errors: false

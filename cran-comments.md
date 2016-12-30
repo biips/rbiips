@@ -1,8 +1,8 @@
 ## Test environments
 * local: Ubuntu Xenial 16.04 x64, R 3.3.2
 * local: Windows 7 x64, R 3.3.2
-* travis-ci: Ubuntu Precise 12.04 64-bit, R devel
-* travis-ci: OS X El Capitan 10.11.6, R devel
+* travis-ci: Ubuntu Precise 12.04 64-bit, R 3.3.1
+* travis-ci: OS X El Capitan 10.11.6, R 3.3.2
 * appveyor: Windows Server 2012 R2 i386, R devel
 * appveyor: Windows Server 2012 R2 x64, R devel
 * win-builder, R devel
