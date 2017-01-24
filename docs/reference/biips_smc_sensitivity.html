@@ -175,7 +175,7 @@ See <code><a href='biips_smc_samples.html'>biips_smc_samples</a></code>  for mor
 <span class='no'>logtau_val</span> <span class='kw'>&lt;-</span> -<span class='fl'>10</span>:<span class='fl'>10</span>
 <span class='no'>out_sens</span> <span class='kw'>&lt;-</span> <span class='fu'>biips_smc_sensitivity</span>(<span class='no'>model</span>, <span class='fu'>list</span>(<span class='kw'>logtau</span> <span class='kw'>=</span> <span class='no'>logtau_val</span>), <span class='no'>n_part</span>)</div><div class='output co'>#&gt; * Analyzing sensitivity with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 21 iterations in 0.06 s</div><div class='input'>
+#&gt;   |**************************************************| 21 iterations in 0.08 s</div><div class='input'>
 <span class='fu'>par</span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>1</span>))
 <span class='fu'>plot</span>(<span class='no'>logtau_val</span>, <span class='no'>out_sens</span>$<span class='no'>log_marg_like</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'l'</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'blue'</span>,
      <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>'logtau'</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>'log p(y|logtau) '</span>, <span class='kw'>main</span> <span class='kw'>=</span> <span class='st'>'SMC sensitivity'</span>)

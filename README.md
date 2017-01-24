@@ -43,6 +43,14 @@ The typical workflow is the following:
   [`biips_hist`](https://biips.github.io/rbiips/reference/smcarray-object.html) and 
   [`biips_table`](https://biips.github.io/rbiips/reference/smcarray-object.html)
 
+Installation
+------------
+```R
+install_dir <- tempfile()
+system(paste("git clone --recursive", shQuote("https://github.com/biips/rbiips.git"), shQuote(install_dir)))
+devtools::install(install_dir)
+```
+
 Authors
 ----------
 **rbiips** development is supported by the team

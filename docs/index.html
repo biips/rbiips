@@ -88,6 +88,13 @@
 <li>Diagnose and analyze the output obtained as <a href="https://biips.github.io/rbiips/reference/smcarray-object.html"><code>smcarray</code></a> and <a href="https://biips.github.io/rbiips/reference/mcmcarray-object.html"><code>mcmcarray</code></a> objects with <a href="https://biips.github.io/rbiips/reference/smcarray-object.html"><code>biips_summary</code></a>, <a href="https://biips.github.io/rbiips/reference/smcarray-object.html"><code>biips_density</code></a>, <a href="https://biips.github.io/rbiips/reference/smcarray-object.html"><code>biips_hist</code></a> and <a href="https://biips.github.io/rbiips/reference/smcarray-object.html"><code>biips_table</code></a>
 </li>
 </ul>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"> </a>Installation</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">install_dir &lt;-<span class="st"> </span><span class="kw">tempfile</span>()
+<span class="kw">system</span>(<span class="kw">paste</span>(<span class="st">"git clone --recursive"</span>, <span class="kw">shQuote</span>(<span class="st">"https://github.com/biips/rbiips.git"</span>), <span class="kw">shQuote</span>(install_dir)))
+devtools::<span class="kw">install</span>(install_dir)</code></pre></div>
+</div>
 <div id="authors" class="section level2">
 <h2 class="hasAnchor">
 <a href="#authors" class="anchor"> </a>Authors</h2>
@@ -102,7 +109,7 @@
 <div id="references" class="section level2">
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"> </a>References</h2>
-<p>A. Todeschini, F.Caron, M. Fuentes, P. Legrand, P. Del Moral. Biips: Software for Bayesian Inference with Interacting Particle Systems. arXiv:1412.3779, Dec. 2014. [<a href="http://arxiv.org/abs/1412.3779">preprint</a>]</p>
+<p>Adrien Todeschini, François Caron, Marc Fuentes, Pierrick Legrand, Pierre Del Moral (2014). Biips: Software for Bayesian Inference with Interacting Particle Systems. arXiv preprint arXiv:1412.3779. URL <a href="http://arxiv.org/abs/1412.3779" class="uri">http://arxiv.org/abs/1412.3779</a>.</p>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
@@ -211,14 +218,10 @@ out_pmmh &lt;-<span class="st"> </span><span class="kw"><a href="reference/pmmh-
 <html><body>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/biips/rbiips">
-  <img src="https://travis-ci.org/biips/rbiips.svg?branch=master" alt="Travis-CI Build Status"></a></li>
-<li><a href="https://ci.appveyor.com/project/biips/rbiips">
-  <img src="https://ci.appveyor.com/api/projects/status/github/biips/rbiips?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
-<li><a href="https://cran.r-project.org/package=rbiips">
-  <img src="http://www.r-pkg.org/badges/version/rbiips" alt="CRAN_Status_Badge"></a></li>
-<li><a href="https://www.gnu.org/licenses/gpl-3.0.html">
-  <img src="https://img.shields.io/badge/license-GPLv3-blue.svg" alt="GPLv3 License"></a></li>
+<li><a href="https://travis-ci.org/biips/rbiips"><img src="https://travis-ci.org/biips/rbiips.svg?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://ci.appveyor.com/project/biips/rbiips"><img src="https://ci.appveyor.com/api/projects/status/github/biips/rbiips?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
+<li><a href="https://cran.r-project.org/package=rbiips"><img src="http://www.r-pkg.org/badges/version/rbiips" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg" alt="GPLv3 License"></a></li>
 </ul>
 </body></html>
 </div>
