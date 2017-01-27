@@ -1,6 +1,6 @@
 # rbiips 0.11.0
 
-* Added a `NEWS.md` file to track changes to the package.
+* rbiips is now a standalone package, including biips c++ libraries
 
 
 

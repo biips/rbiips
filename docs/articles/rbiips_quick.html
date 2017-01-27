@@ -69,7 +69,7 @@
       <h1>Quick examples of rbiips usage</h1>
                         <h4 class="author">Adrien Todeschini, François Caron</h4>
             
-            <h4 class="date">2017-01-24</h4>
+            <h4 class="date">2017-01-27</h4>
           </div>
 
     
@@ -763,7 +763,7 @@ obj_pimh &lt;-<span class="st"> </span><span class="kw"><a href="../reference/bi
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">out_pimh &lt;-<span class="st"> </span><span class="kw"><a href="../reference/pimh-object.html">biips_pimh_samples</a></span>(obj_pimh, <span class="dv">100</span>, n_part)  <span class="co"># Samples</span></code></pre></div>
 <pre><code>## * Generating PIMH samples with 50 particles
 ##   |--------------------------------------------------| 100%
-##   |**************************************************| 100 iterations in 0.43 s</code></pre>
+##   |**************************************************| 100 iterations in 0.45 s</code></pre>
 <p>Manipulate <code>mcmcarray.list</code> object</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/mcmcarray-object.html">is.mcmcarray.list</a></span>(out_pimh)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
@@ -1010,11 +1010,11 @@ obj_pmmh &lt;-<span class="st"> </span><span class="kw"><a href="../reference/bi
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">out_pmmh_burn &lt;-<span class="st"> </span><span class="kw"><a href="../reference/pmmh-object.html">biips_pmmh_update</a></span>(obj_pmmh, <span class="dv">100</span>, n_part)  <span class="co"># Burn-in</span></code></pre></div>
 <pre><code>## * Adapting PMMH with 50 particles
 ##   |--------------------------------------------------| 100%
-##   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 0.49 s</code></pre>
+##   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 0.50 s</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">out_pmmh &lt;-<span class="st"> </span><span class="kw"><a href="../reference/pmmh-object.html">biips_pmmh_samples</a></span>(obj_pmmh, <span class="dv">100</span>, n_part, <span class="dt">thin =</span> <span class="dv">1</span>)  <span class="co"># Samples</span></code></pre></div>
 <pre><code>## * Generating 100 PMMH samples with 50 particles
 ##   |--------------------------------------------------| 100%
-##   |**************************************************| 100 iterations in 0.49 s</code></pre>
+##   |**************************************************| 100 iterations in 0.50 s</code></pre>
 <p>Manipulate <code>mcmcarray.list</code> object</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/mcmcarray-object.html">is.mcmcarray.list</a></span>(out_pmmh)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>

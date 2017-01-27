@@ -45,6 +45,7 @@ The typical workflow is the following:
 
 Installation
 ------------
+Install the latest version from GitHub:
 ```R
 install_dir <- tempfile()
 system(paste("git clone --recursive", shQuote("https://github.com/biips/rbiips.git"), shQuote(install_dir)))
