@@ -45,7 +45,7 @@ The typical workflow is the following:
 
 Installation
 ------------
-Install the latest version from GitHub:
+Install the latest version from [GitHub](https://github.com/biips/rbiips):
 ```R
 install_dir <- tempfile()
 system(paste("git clone --recursive", shQuote("https://github.com/biips/rbiips.git"), shQuote(install_dir)))
@@ -54,17 +54,14 @@ devtools::install(install_dir)
 
 Authors
 ----------
-**rbiips** development is supported by the team
-[ALEA](http://alea.bordeaux.inria.fr) at
-[Inria Bordeaux Sud-Ouest](http://www.inria.fr/en/centre/bordeaux).
 
 - [Adrien Todeschini](http://adrien.tspace.fr)
 - [François Caron](http://www.stats.ox.ac.uk/~caron/)
 - Marc Fuentes
 
-**rbiips** is adapted from the 
-[**rjags**](https://cran.r-project.org/web/packages/rjags/index.html) package 
-for [JAGS][JAGS website].
+**rbiips** development was initiated by the research team
+[ALEA](http://alea.bordeaux.inria.fr) at
+[Inria Bordeaux Sud-Ouest](http://www.inria.fr/en/centre/bordeaux).
 
 References
 -------------

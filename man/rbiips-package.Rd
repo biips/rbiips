@@ -88,54 +88,17 @@ biips_summary(out_smc)
 par(mfrow = c(2, 2))
 plot(biips_density(out_smc$x, bw = 'nrd0', adjust = 1, n = 100))
 plot(biips_table(out_smc[['c[2:10]']]))
-
-#' # PIMH algorithm
-n_part <- 50
-obj_pimh <- biips_pimh_init(model, c('x', 'c[2:10]'))  # Initialize
-out_pimh_burn <- biips_pimh_update(obj_pimh, 100, n_part)  # Burn-in
-out_pimh <- biips_pimh_samples(obj_pimh, 100, n_part)  # Samples
-
-biips_summary(out_pimh)
-par(mfrow = c(2, 2))
-plot(biips_density(out_pimh$x))
-biips_hist(out_pimh$x)
-plot(biips_table(out_pimh[['c[2:10]']]))
-
-#' # SMC sensitivity analysis
-n_part <- 50
-logtau_val <- -10:10
-out_sens <- biips_smc_sensitivity(model, list(logtau = logtau_val), n_part)
-
-#' # PMMH algorithm
-data <- list(tmax = 10, p = c(.5, .5), logtau_true = log(1))
-model <- biips_model(modelfile, data)
-
-n_part <- 50
-obj_pmmh <- biips_pmmh_init(model, 'logtau', latent_names = c('x', 'c[2:10]'),
-                            inits = list(logtau = -2))  # Initialize
-out_pmmh_burn <- biips_pmmh_update(obj_pmmh, 100, n_part)  # Burn-in
-out_pmmh <- biips_pmmh_samples(obj_pmmh, 100, n_part, thin = 1)  # Samples
-
-biips_summary(out_pmmh)
-par(mfrow = c(2, 2))
-plot(biips_density(out_pmmh$logtau))
-biips_hist(out_pmmh$logtau)
-plot(biips_density(out_pmmh$x))
-biips_hist(out_pmmh$x)
-plot(biips_table(out_pmmh[['c[2:10]']]))
 }
 \author{
-\pkg{rbiips} development is supported by the team
-  \href{http://alea.bordeaux.inria.fr}{ALEA} at
-  \href{http://www.inria.fr/en/centre/bordeaux}{Inria Bordeaux Sud-Ouest}.
-  \itemize{
+\itemize{
     \item \href{http://adrien.tspace.fr}{Adrien
     Todeschini}
     \item \href{http://www.stats.ox.ac.uk/~caron/}{François Caron}
     \item Marc Fuentes
   }
-\pkg{rbiips} is adapted from \pkg{rjags} interface for
-  \href{http://mcmc-jags.sourceforge.net/}{JAGS}.
+  \pkg{rbiips} development was initiated by the research team
+  \href{http://alea.bordeaux.inria.fr}{ALEA} at
+  \href{http://www.inria.fr/en/centre/bordeaux}{Inria Bordeaux Sud-Ouest}.
 }
 \references{
 Adrien Todeschini, François Caron, Marc Fuentes, Pierrick Legrand, Pierre Del Moral (2014).

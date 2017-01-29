@@ -74,12 +74,7 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/biips/rbiips">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -280,9 +275,9 @@ giving a rule to choose the bandwidth. See <code><a href='http://www.rdocumentat
 <span class='no'>n_part</span> <span class='kw'>&lt;-</span> <span class='fl'>50</span>
 <span class='no'>obj_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_pimh_init.html'>biips_pimh_init</a></span>(<span class='no'>model</span>, <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>))  <span class='co'># Initialize</span></div><div class='output co'>#&gt; * Initializing PIMH</div><div class='input'><span class='no'>out_pimh_burn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_update</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Burn-in</span></div><div class='output co'>#&gt; * Updating PIMH with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 0.44 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_samples</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
+#&gt;   |**************************************************| 100 iterations in 0.43 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_samples</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 0.45 s</div><div class='input'>
+#&gt;   |**************************************************| 100 iterations in 0.44 s</div><div class='input'>
 <span class='co'>#' Manipulate `mcmcarray.list` object</span>
 <span class='fu'>is.mcmcarray.list</span>(<span class='no'>out_pimh</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>names</span>(<span class='no'>out_pimh</span>)</div><div class='output co'>#&gt; [1] &quot;log_marg_like&quot; &quot;x&quot;             &quot;c[2:10]&quot;      </div><div class='input'><span class='no'>out_pimh</span></div><div class='output co'>#&gt; x mcmcarray:
 #&gt; $mean
@@ -371,9 +366,9 @@ giving a rule to choose the bandwidth. See <code><a href='http://www.rdocumentat
 <span class='no'>obj_pmmh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_pmmh_init.html'>biips_pmmh_init</a></span>(<span class='no'>model</span>, <span class='st'>'logtau'</span>, <span class='kw'>latent_names</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>),
                             <span class='kw'>inits</span> <span class='kw'>=</span> <span class='fu'>list</span>(<span class='kw'>logtau</span> <span class='kw'>=</span> -<span class='fl'>2</span>))  <span class='co'># Initialize</span></div><div class='output co'>#&gt; * Initializing PMMH</div><div class='input'><span class='no'>out_pmmh_burn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pmmh-object.html'>biips_pmmh_update</a></span>(<span class='no'>obj_pmmh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Burn-in</span></div><div class='output co'>#&gt; * Adapting PMMH with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 0.53 s</div><div class='input'><span class='no'>out_pmmh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pmmh-object.html'>biips_pmmh_samples</a></span>(<span class='no'>obj_pmmh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>, <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>1</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating 100 PMMH samples with 50 particles
+#&gt;   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 0.54 s</div><div class='input'><span class='no'>out_pmmh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pmmh-object.html'>biips_pmmh_samples</a></span>(<span class='no'>obj_pmmh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>, <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>1</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating 100 PMMH samples with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 0.49 s</div><div class='input'>
+#&gt;   |**************************************************| 100 iterations in 0.50 s</div><div class='input'>
 <span class='co'>#' Manipulate `mcmcarray.list` object</span>
 <span class='fu'>is.mcmcarray.list</span>(<span class='no'>out_pmmh</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>names</span>(<span class='no'>out_pmmh</span>)</div><div class='output co'>#&gt; [1] &quot;log_marg_like_pen&quot; &quot;logtau&quot;            &quot;x&quot;                
 #&gt; [4] &quot;c[2:10]&quot;          </div><div class='input'><span class='no'>out_pmmh</span></div><div class='output co'>#&gt; logtau mcmcarray:

@@ -74,12 +74,7 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/biips/rbiips">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -179,9 +174,9 @@ valid subset of the variables of the model, e.g.: <code>c(&#39;var1&#39;,</code>
 <span class='no'>n_part</span> <span class='kw'>&lt;-</span> <span class='fl'>50</span>
 <span class='no'>obj_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'>biips_pimh_init</span>(<span class='no'>model</span>, <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>))  <span class='co'># Initialize</span></div><div class='output co'>#&gt; * Initializing PIMH</div><div class='input'><span class='fu'><a href='pimh-object.html'>is.pimh</a></span>(<span class='no'>obj_pimh</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='no'>out_pimh_burn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_update</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Burn-in</span></div><div class='output co'>#&gt; * Updating PIMH with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 0.44 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_samples</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
+#&gt;   |**************************************************| 100 iterations in 0.48 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_samples</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 0.45 s</div></pre>
+#&gt;   |**************************************************| 100 iterations in 0.48 s</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

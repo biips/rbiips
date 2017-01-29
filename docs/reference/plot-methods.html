@@ -74,12 +74,7 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/biips/rbiips">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -187,90 +182,17 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>#' # Compile model</span>
-<span class='no'>modelfile</span> <span class='kw'>&lt;-</span> <span class='fu'>system.file</span>(<span class='st'>'extdata'</span>, <span class='st'>'hmm_f.bug'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'rbiips'</span>)
-<span class='fu'>stopifnot</span>(<span class='fu'>nchar</span>(<span class='no'>modelfile</span>) <span class='kw'>&gt;</span> <span class='fl'>0</span>)
-<span class='fu'>cat</span>(<span class='fu'>readLines</span>(<span class='no'>modelfile</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>'\n'</span>)</div><div class='output co'>#&gt; var c_true[tmax], x_true[tmax], c[tmax], x[tmax], y[tmax]
-#&gt; 
-#&gt; data
-#&gt; {
-#&gt;   x_true[1] ~ dnorm(0, 1/5)
-#&gt;   y[1] ~ dnorm(x_true[1], exp(logtau_true))
-#&gt;   for (t in 2:tmax)
-#&gt;   {
-#&gt;     c_true[t] ~ dcat(p)
-#&gt;     x_true[t] ~ dnorm(f(x_true[t-1], t-1), ifelse(c_true[t]==1, 1/10, 1/100))
-#&gt;     y[t] ~ dnorm(x_true[t]/4, exp(logtau_true))
-#&gt;   }
-#&gt; }
-#&gt; 
-#&gt; model
-#&gt; {
-#&gt;   logtau ~ dunif(-3, 3)
-#&gt;   x[1] ~ dnorm(0, 1/5)
-#&gt;   y[1] ~ dnorm(x[1], exp(logtau))
-#&gt;   for (t in 2:tmax)
-#&gt;   {
-#&gt;     c[t] ~ dcat(p)
-#&gt;     x[t] ~ dnorm(f(x[t-1], t-1), ifelse(c[t]==1, 1/10, 1/100))
-#&gt;     y[t] ~ dnorm(x[t]/4, exp(logtau))
-#&gt;   }
-#&gt; }</div><div class='input'>
-<span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>tmax</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>.5</span>, <span class='fl'>.5</span>), <span class='kw'>logtau_true</span> <span class='kw'>=</span> <span class='fu'>log</span>(<span class='fl'>1</span>), <span class='kw'>logtau</span> <span class='kw'>=</span> <span class='fu'>log</span>(<span class='fl'>1</span>))
-<span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_model.html'>biips_model</a></span>(<span class='no'>modelfile</span>, <span class='no'>data</span>, <span class='kw'>sample_data</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; * Parsing model in: /home/adrien-alea/Dropbox/workspace/rbiips/inst/extdata/hmm_f.bug
-#&gt; * Compiling data graph
-#&gt;   Declaring variables
-#&gt;   Resolving undeclared variables
-#&gt;   Allocating nodes
-#&gt;   Graph size: 94
-#&gt;   Sampling data
-#&gt;   Reading data back into data table
-#&gt; * Compiling model graph
-#&gt;   Declaring variables
-#&gt;   Resolving undeclared variables
-#&gt;   Allocating nodes
-#&gt;   Graph size: 105</div><div class='input'>
-<span class='co'>#' # SMC algorithm</span>
-<span class='no'>n_part</span> <span class='kw'>&lt;-</span> <span class='fl'>100</span>
-<span class='no'>out_smc</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_smc_samples.html'>biips_smc_samples</a></span>(<span class='no'>model</span>, <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>), <span class='no'>n_part</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'fs'</span>,
-                             <span class='kw'>rs_thres</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>rs_type</span> <span class='kw'>=</span> <span class='st'>'stratified'</span>)</div><div class='output co'>#&gt; * Assigning node samplers
-#&gt; * Running SMC forward sampler with 100 particles
-#&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 10 iterations in 0.08 s</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='co'>#' # SMC algorithm</span>
+<span class='fu'>data</span>(<span class='no'>out_smc</span>)
 <span class='fu'>par</span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>2</span>))
-<span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_smc</span>$<span class='no'>x</span>, <span class='kw'>bw</span> <span class='kw'>=</span> <span class='st'>'nrd0'</span>, <span class='kw'>adjust</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100</span>))</div><img src='plot-methods-8.png' alt='' width='540' height='400' /><img src='plot-methods-9.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_table</a></span>(<span class='no'>out_smc</span><span class='kw'>[[</span><span class='st'>'c[2:10]'</span>]]))</div><img src='plot-methods-11.png' alt='' width='540' height='400' /><img src='plot-methods-12.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_smc</span>$<span class='no'>x</span>$<span class='no'>f</span>))</div><img src='plot-methods-14.png' alt='' width='540' height='400' /><img src='plot-methods-15.png' alt='' width='540' height='400' /><img src='plot-methods-16.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_table</a></span>(<span class='no'>out_smc</span><span class='kw'>[[</span><span class='st'>'c[2:10]'</span>]]$<span class='no'>f</span>))</div><img src='plot-methods-18.png' alt='' width='540' height='400' /><img src='plot-methods-19.png' alt='' width='540' height='400' /><div class='input'>
+<span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_smc</span>$<span class='no'>x</span>, <span class='kw'>bw</span> <span class='kw'>=</span> <span class='st'>'nrd0'</span>, <span class='kw'>adjust</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100</span>))</div><img src='plot-methods-2.png' alt='' width='540' height='400' /><img src='plot-methods-3.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_table</a></span>(<span class='no'>out_smc</span><span class='kw'>[[</span><span class='st'>'c[2:10]'</span>]]))</div><img src='plot-methods-5.png' alt='' width='540' height='400' /><img src='plot-methods-6.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_smc</span>$<span class='no'>x</span>$<span class='no'>f</span>))</div><img src='plot-methods-8.png' alt='' width='540' height='400' /><img src='plot-methods-9.png' alt='' width='540' height='400' /><img src='plot-methods-10.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_table</a></span>(<span class='no'>out_smc</span><span class='kw'>[[</span><span class='st'>'c[2:10]'</span>]]$<span class='no'>f</span>))</div><img src='plot-methods-12.png' alt='' width='540' height='400' /><img src='plot-methods-13.png' alt='' width='540' height='400' /><div class='input'>
 <span class='co'>#' # PIMH algorithm</span>
-<span class='no'>n_part</span> <span class='kw'>&lt;-</span> <span class='fl'>50</span>
-<span class='no'>obj_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_pimh_init.html'>biips_pimh_init</a></span>(<span class='no'>model</span>, <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>))  <span class='co'># Initialize</span></div><div class='output co'>#&gt; * Initializing PIMH</div><div class='input'><span class='no'>out_pimh_burn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_update</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Burn-in</span></div><div class='output co'>#&gt; * Updating PIMH with 50 particles
-#&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 3.30 s</div><div class='input'><span class='no'>out_pimh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pimh-object.html'>biips_pimh_samples</a></span>(<span class='no'>obj_pimh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating PIMH samples with 50 particles
-#&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 3.02 s</div><div class='input'>
-<span class='fu'>par</span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>2</span>))</div><img src='plot-methods-27.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_pimh</span>$<span class='no'>x</span>))</div><img src='plot-methods-29.png' alt='' width='540' height='400' /><img src='plot-methods-30.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_table</a></span>(<span class='no'>out_pimh</span><span class='kw'>[[</span><span class='st'>'c[2:10]'</span>]]))</div><img src='plot-methods-32.png' alt='' width='540' height='400' /><img src='plot-methods-33.png' alt='' width='540' height='400' /><div class='input'>
+<span class='fu'>data</span>(<span class='no'>out_pimh</span>)
+<span class='fu'>par</span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>2</span>))</div><img src='plot-methods-15.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_pimh</span>$<span class='no'>x</span>))</div><img src='plot-methods-17.png' alt='' width='540' height='400' /><img src='plot-methods-18.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_table</a></span>(<span class='no'>out_pimh</span><span class='kw'>[[</span><span class='st'>'c[2:10]'</span>]]))</div><img src='plot-methods-20.png' alt='' width='540' height='400' /><img src='plot-methods-21.png' alt='' width='540' height='400' /><div class='input'>
 <span class='co'>#' # PMMH algorithm</span>
-<span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>tmax</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>.5</span>, <span class='fl'>.5</span>), <span class='kw'>logtau_true</span> <span class='kw'>=</span> <span class='fu'>log</span>(<span class='fl'>1</span>))
-<span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_model.html'>biips_model</a></span>(<span class='no'>modelfile</span>, <span class='no'>data</span>)</div><div class='output co'>#&gt; * Parsing model in: /home/adrien-alea/Dropbox/workspace/rbiips/inst/extdata/hmm_f.bug
-#&gt; * Compiling data graph
-#&gt;   Declaring variables
-#&gt;   Resolving undeclared variables
-#&gt;   Allocating nodes
-#&gt;   Graph size: 93
-#&gt;   Sampling data
-#&gt;   Reading data back into data table
-#&gt; * Compiling model graph
-#&gt;   Declaring variables
-#&gt;   Resolving undeclared variables
-#&gt;   Allocating nodes
-#&gt;   Graph size: 105</div><div class='input'>
-<span class='no'>n_part</span> <span class='kw'>&lt;-</span> <span class='fl'>50</span>
-<span class='no'>obj_pmmh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_pmmh_init.html'>biips_pmmh_init</a></span>(<span class='no'>model</span>, <span class='st'>'logtau'</span>, <span class='kw'>latent_names</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>'x'</span>, <span class='st'>'c[2:10]'</span>),
-                            <span class='kw'>inits</span> <span class='kw'>=</span> <span class='fu'>list</span>(<span class='kw'>logtau</span> <span class='kw'>=</span> -<span class='fl'>2</span>))  <span class='co'># Initialize</span></div><div class='output co'>#&gt; * Initializing PMMH</div><div class='input'><span class='no'>out_pmmh_burn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pmmh-object.html'>biips_pmmh_update</a></span>(<span class='no'>obj_pmmh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>)  <span class='co'># Burn-in</span></div><div class='output co'>#&gt; * Adapting PMMH with 50 particles
-#&gt;   |--------------------------------------------------| 100%
-#&gt;   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100 iterations in 3.17 s</div><div class='input'><span class='no'>out_pmmh</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pmmh-object.html'>biips_pmmh_samples</a></span>(<span class='no'>obj_pmmh</span>, <span class='fl'>100</span>, <span class='no'>n_part</span>, <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>1</span>)  <span class='co'># Samples</span></div><div class='output co'>#&gt; * Generating 100 PMMH samples with 50 particles
-#&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 100 iterations in 2.97 s</div><div class='input'>
-<span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_pmmh</span>$<span class='no'>logtau</span>))</div><img src='plot-methods-43.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>par</span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>2</span>))
-<span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_pmmh</span>$<span class='no'>x</span>))</div><img src='plot-methods-45.png' alt='' width='540' height='400' /><img src='plot-methods-46.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_table</a></span>(<span class='no'>out_pmmh</span><span class='kw'>[[</span><span class='st'>'c[2:10]'</span>]]))</div><img src='plot-methods-48.png' alt='' width='540' height='400' /><img src='plot-methods-49.png' alt='' width='540' height='400' /><img src='plot-methods-50.png' alt='' width='540' height='400' /></pre>
+<span class='fu'>data</span>(<span class='no'>out_pmmh</span>)
+<span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_pmmh</span>$<span class='no'>logtau</span>))</div><img src='plot-methods-23.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>par</span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>2</span>))
+<span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_density</a></span>(<span class='no'>out_pmmh</span>$<span class='no'>x</span>))</div><img src='plot-methods-25.png' alt='' width='540' height='400' /><img src='plot-methods-26.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='fu'><a href='smcarray-object.html'>biips_table</a></span>(<span class='no'>out_pmmh</span><span class='kw'>[[</span><span class='st'>'c[2:10]'</span>]]))</div><img src='plot-methods-28.png' alt='' width='540' height='400' /><img src='plot-methods-29.png' alt='' width='540' height='400' /><img src='plot-methods-30.png' alt='' width='540' height='400' /></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
