@@ -4,7 +4,7 @@
 * travis-ci: OS X El Capitan 10.11.6, R 3.3.2
 * appveyor: Windows Server 2012 R2 i386, R devel
 * appveyor: Windows Server 2012 R2 x64, R devel
-* win-builder, R devel (https://win-builder.r-project.org/ZE7YN88jMFiS)
+* win-builder, R devel (https://win-builder.r-project.org/82i4Nm1tyvts/)
 
 ## R CMD check results
 There was no ERRORs
