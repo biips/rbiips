@@ -10,4 +10,3 @@ rec(x, i)
 Access i-th element of x with recycling
 }
 \keyword{internal}
-

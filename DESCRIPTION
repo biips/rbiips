@@ -14,7 +14,7 @@ Description: Biips is a general software for Bayesian inference with interacting
     students, thanks to its automated "black box" inference engine. It borrows from
     the BUGS/JAGS software, widely used in Bayesian statistics, the statistical
     modeling with graphical models and the language associated with their
-    descriptions.
+    descriptions. See <https://biips.github.io> for more information on Biips.
 Depends:
     R (>= 3.0.2),
     stats,
@@ -30,5 +30,5 @@ BugReports: https://github.com/biips/rbiips/issues
 Imports: Rcpp (>= 0.11.0)
 LinkingTo: Rcpp, BH (>= 1.49.0)
 VignetteBuilder: knitr
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 LazyData: true

@@ -12,4 +12,3 @@ out_pmmh
 Sample output from \code{\link{biips_pmmh_samples}}
 }
 \keyword{datasets}
-

@@ -27,4 +27,3 @@ A logical. \code{TRUE} if success.
 Run a forward SMC algorithm
 }
 \keyword{internal}
-

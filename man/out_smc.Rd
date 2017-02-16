@@ -12,4 +12,3 @@ out_smc
 Sample output from \code{\link{biips_smc_samples}}
 }
 \keyword{datasets}
-

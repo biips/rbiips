@@ -62,4 +62,3 @@ points(data$logtau, ymin, pch = 17, col = 'green')
 \seealso{
 \code{\link{biips_model}}, \code{\link{biips_smc_samples}}
 }
-

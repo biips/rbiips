@@ -2,9 +2,9 @@
 % Please edit documentation in R/rbiips-package.r
 \docType{package}
 \name{rbiips-package}
+\alias{rbiips-package}
 \alias{_PACKAGE}
 \alias{rbiips}
-\alias{rbiips-package}
 \title{Bayesian inference with interacting particle systems}
 \description{
 \pkg{rbiips} is an interface with the \href{https://biips.github.io}{Biips} C++ libraries for analysing
@@ -89,17 +89,6 @@ par(mfrow = c(2, 2))
 plot(biips_density(out_smc$x, bw = 'nrd0', adjust = 1, n = 100))
 plot(biips_table(out_smc[['c[2:10]']]))
 }
-\author{
-\itemize{
-    \item \href{http://adrien.tspace.fr}{Adrien
-    Todeschini}
-    \item \href{http://www.stats.ox.ac.uk/~caron/}{François Caron}
-    \item Marc Fuentes
-  }
-  \pkg{rbiips} development was initiated by the research team
-  \href{http://alea.bordeaux.inria.fr}{ALEA} at
-  \href{http://www.inria.fr/en/centre/bordeaux}{Inria Bordeaux Sud-Ouest}.
-}
 \references{
 Adrien Todeschini, François Caron, Marc Fuentes, Pierrick Legrand, Pierre Del Moral (2014).
   Biips: Software for Bayesian Inference with Interacting Particle Systems. 
@@ -115,5 +104,15 @@ Adrien Todeschini, François Caron, Marc Fuentes, Pierrick Legrand, Pierre Del M
   \href{https://biips.github.io}{Biips website},
   \href{http://sourceforge.net/projects/mcmc-jags/files/Manuals/4.x/jags_user_manual.pdf/download}{JAGS User Manual}
 }
+\author{
+\itemize{
+    \item \href{http://adrien.tspace.fr}{Adrien
+    Todeschini}
+    \item \href{http://www.stats.ox.ac.uk/~caron/}{François Caron}
+    \item Marc Fuentes
+  }
+  \pkg{rbiips} development was initiated by the research team
+  \href{http://alea.bordeaux.inria.fr}{ALEA} at
+  \href{http://www.inria.fr/en/centre/bordeaux}{Inria Bordeaux Sud-Ouest}.
+}
 \keyword{package}
-

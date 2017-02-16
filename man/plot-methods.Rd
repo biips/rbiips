@@ -2,21 +2,22 @@
 % Please edit documentation in R/plot-methods.r
 \name{plot-methods}
 \alias{plot-methods}
-\alias{plot.density.mcmcarray}
-\alias{plot.density.mcmcarray.list}
-\alias{plot.density.mcmcarray.univariate}
-\alias{plot.density.smcarray}
-\alias{plot.density.smcarray.fsb}
-\alias{plot.density.smcarray.fsb.list}
 \alias{plot.density.smcarray.fsb.univariate}
-\alias{plot.histogram.mcmcarray}
-\alias{plot.histogram.mcmcarray.list}
-\alias{plot.table.mcmcarray}
-\alias{plot.table.mcmcarray.list}
-\alias{plot.table.smcarray}
-\alias{plot.table.smcarray.fsb}
-\alias{plot.table.smcarray.fsb.list}
 \alias{plot.table.smcarray.fsb.univariate}
+\alias{plot.density.smcarray}
+\alias{plot.table.smcarray}
+\alias{plot.density.smcarray.fsb}
+\alias{plot.table.smcarray.fsb}
+\alias{plot.density.smcarray.fsb.list}
+\alias{plot.table.smcarray.fsb.list}
+\alias{plot-methods}
+\alias{plot.table.mcmcarray}
+\alias{plot.density.mcmcarray.univariate}
+\alias{plot.density.mcmcarray}
+\alias{plot.histogram.mcmcarray}
+\alias{plot.table.mcmcarray.list}
+\alias{plot.density.mcmcarray.list}
+\alias{plot.histogram.mcmcarray.list}
 \title{Plot methods.}
 \usage{
 \method{plot}{density.smcarray.fsb.univariate}(x, type = "l", col = 1:6,
@@ -111,4 +112,3 @@ plot(biips_table(out_pmmh[['c[2:10]']]))
 \code{\link[stats]{plot.density}},
   \code{\link[graphics]{plot.histogram}}, \code{\link[graphics]{plot.table}}
 }
-

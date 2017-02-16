@@ -21,4 +21,3 @@ we use inherits = TRUE when calling mget
 Adapted from rstan.
 }
 \keyword{internal}
-

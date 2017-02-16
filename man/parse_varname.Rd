@@ -15,4 +15,3 @@ Try to parse string of form 'a' or 'a[n,p:q,r]' where 'a' is a variable name
 and n,p,q,r are integers
 }
 \keyword{internal}
-

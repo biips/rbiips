@@ -208,7 +208,7 @@ information.</p>
 #&gt;   }
 #&gt; }</div><div class='input'>
 <span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>tmax</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>.5</span>, <span class='fl'>.5</span>), <span class='kw'>logtau_true</span> <span class='kw'>=</span> <span class='fu'>log</span>(<span class='fl'>1</span>), <span class='kw'>logtau</span> <span class='kw'>=</span> <span class='fu'>log</span>(<span class='fl'>1</span>))
-<span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_model.html'>biips_model</a></span>(<span class='no'>modelfile</span>, <span class='no'>data</span>, <span class='kw'>sample_data</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; * Parsing model in: /home/adrien-alea/Dropbox/workspace/rbiips/inst/extdata/hmm_f.bug
+<span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='biips_model.html'>biips_model</a></span>(<span class='no'>modelfile</span>, <span class='no'>data</span>, <span class='kw'>sample_data</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; * Parsing model in: /home/adrien/Dropbox/workspace/rbiips/inst/extdata/hmm_f.bug
 #&gt; * Compiling data graph
 #&gt;   Declaring variables
 #&gt;   Resolving undeclared variables
@@ -227,7 +227,7 @@ information.</p>
                              <span class='kw'>rs_thres</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>rs_type</span> <span class='kw'>=</span> <span class='st'>'stratified'</span>)</div><div class='output co'>#&gt; * Assigning node samplers
 #&gt; * Running SMC forward sampler with 100 particles
 #&gt;   |--------------------------------------------------| 100%
-#&gt;   |**************************************************| 10 iterations in 0.07 s</div><div class='input'>
+#&gt;   |**************************************************| 10 iterations in 0.06 s</div><div class='input'>
 <span class='fu'><a href='smcarray-object.html'>biips_diagnosis</a></span>(<span class='no'>out_smc</span>)</div><div class='output co'>#&gt; * Diagnosis of variable: c[2:10] 
 #&gt;   Filtering: POOR
 #&gt;     The minimum effective sample size is too low: 19.44938 

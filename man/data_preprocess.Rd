@@ -20,4 +20,3 @@ stop if no-name lists; duplicate names. stop if the objects given
 Adapted from \pkg{rstan}.
 }
 \keyword{internal}
-

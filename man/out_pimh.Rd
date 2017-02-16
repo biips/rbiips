@@ -12,4 +12,3 @@ out_pimh
 Sample output from \code{\link{biips_pimh_samples}}
 }
 \keyword{datasets}
-

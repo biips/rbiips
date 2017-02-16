@@ -122,4 +122,3 @@ out_pmmh <- biips_pmmh_samples(obj_pmmh, 100, n_part, thin = 1)  # Samples
 \code{\link{biips_model}}, \code{\link{biips_pmmh_update}},
   \code{\link{biips_pmmh_samples}}
 }
-

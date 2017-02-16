@@ -79,4 +79,3 @@ cat(readLines(dotfile), sep = '\\n')
 }
 \keyword{graphs}
 \keyword{models}
-

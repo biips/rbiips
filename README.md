@@ -1,6 +1,7 @@
 rbiips
 ========
-[![Travis-CI Build Status](https://travis-ci.org/biips/rbiips.svg?branch=master)](https://travis-ci.org/biips/rbiips)
+[![Travis-CI Linux](https://travis-matrix-badges.herokuapp.com/repos/biips/rbiips/branches/master/1)](https://travis-ci.org/biips/rbiips)
+[![Travis-CI OS X](https://travis-matrix-badges.herokuapp.com/repos/biips/rbiips/branches/master/2)](https://travis-ci.org/biips/rbiips)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/biips/rbiips?branch=master&svg=true)](https://ci.appveyor.com/project/biips/rbiips)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rbiips)](https://cran.r-project.org/package=rbiips)
 [![GPLv3 License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)

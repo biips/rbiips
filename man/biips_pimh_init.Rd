@@ -57,4 +57,3 @@ out_pimh <- biips_pimh_samples(obj_pimh, 100, n_part)  # Samples
 \code{\link{biips_model}}, \code{\link{biips_pimh_update}},
   \code{\link{biips_pimh_samples}}
 }
-

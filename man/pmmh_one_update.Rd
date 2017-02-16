@@ -10,4 +10,3 @@ pmmh_one_update(object, pn_param, n_part, rw_rescale, rw_learn, ...)
 Realize one step of the PMMH algorithm.
 }
 \keyword{internal}
-

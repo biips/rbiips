@@ -131,4 +131,3 @@ points(model$data()$c_true[t], 0, pch = 17, col = 'green')
   \code{\link{biips_summary}}, \code{\link{biips_density}},
   \code{\link{biips_table}}
 }
-
