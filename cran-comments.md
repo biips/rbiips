@@ -1,6 +1,6 @@
 ## Test environments
 * local: Ubuntu Xenial 16.04 x64, R 3.3.2
-* travis-ci: Ubuntu Precise 12.04 64-bit, R 3.3.1
+* travis-ci: Ubuntu Precise 12.04 64-bit, R 3.3.2
 * travis-ci: OS X El Capitan 10.11.6, R 3.3.2
 * appveyor: Windows Server 2012 R2 i386, R devel
 * appveyor: Windows Server 2012 R2 x64, R devel
@@ -52,20 +52,4 @@ There are currently no downstream dependencies for this package.
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* removed deprecated LICENSE file
-
-* changed Authors@R field to call to person()
-
-* changed to canonical URL of the CRAN page for a package: https://CRAN.R-project.org/package=pkgname
-
-* changed title to be in title case: Bayesian Inference with Interacting Particle Systems
-
-* removed PKG_CXXFLAGS
-
-* added data files: out_smc.rda, out_pimh.rda, out_pmmh.rda
-
-* reduced each examples rbiips-package and plot-methods to less than 5 sec
-
-* changed DESCRIPTION URL field to https://biips.github.io/rbiips
-
-* renamed vignette to rbiips_usage.Rmd
+* added in Description: See <https://biips.github.io> for more information on Biips.

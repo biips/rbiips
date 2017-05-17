@@ -618,7 +618,7 @@ pmmh_algo <- function(object, ...) UseMethod("pmmh_algo")
 
 #' @keywords internal
 pmmh_algo.pmmh <- function(object, n_iter, n_part, return_samples, thin = 1, max_fail = 0,
-  rw_adapt = FALSE, output = "p", ...) {
+  rw_adapt = FALSE, output = "p", proposal = "prior", ...) {
   stopifnot(is.pmmh(object))
   stopifnot(is.numeric(n_iter), length(n_iter) == 1, n_iter > 0, is.finite(n_iter))
   n_iter <- as.integer(n_iter)
@@ -635,6 +635,8 @@ pmmh_algo.pmmh <- function(object, n_iter, n_part, return_samples, thin = 1, max
   output <- unlist(strsplit(output, NULL))
   output <- match.arg(output, c("p", "l", "a", "f", "s"), several.ok = TRUE)
   output <- unique(output)
+  
+  proposal <- match.arg(proposal, c("auto", "prior"))
 
 
   ## stop biips verbosity
@@ -658,7 +660,7 @@ pmmh_algo.pmmh <- function(object, n_iter, n_part, return_samples, thin = 1, max
 
   # build smc sampler
   if (!rbiips("is_sampler_built", console))
-    rbiips("build_smc_sampler", console, FALSE)
+    rbiips("build_smc_sampler", console, proposal=="prior")
 
   # toggle rescaling adaptation
   rw_rescale <- rw_adapt && object$n_iter() < object$n_rescale()
