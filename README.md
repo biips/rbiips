@@ -48,7 +48,7 @@ Installation
 ------------
 Install the latest version from [GitHub](https://github.com/biips/rbiips):
 ```R
-install_dir <- tempdir()
+install_dir <- file.path(tempdir(), "rbiips")
 system(paste("git clone --recursive", shQuote("https://github.com/biips/rbiips.git"), shQuote(install_dir)))
 devtools::install(install_dir)
 ```
