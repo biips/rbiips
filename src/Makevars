@@ -1,4 +1,3 @@
-MAKEFLAGS = -j2
 SOURCES = $(wildcard *.cpp biips/src/core/*.cpp biips/src/core/*/*.cpp biips/src/base/*.cpp biips/src/base/*/*.cpp biips/src/compiler/*.cpp biips/src/compiler/*/*.cpp)
 SOURCES_CC = $(wildcard biips/src/compiler/compiler/*.cc)
 OBJECTS = $(SOURCES:.cpp=.o) $(SOURCES_CC:.cc=.o)
