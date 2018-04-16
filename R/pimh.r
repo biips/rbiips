@@ -122,8 +122,9 @@ pimh_algo <- function(object, n_iter, n_part, return_samples, thin = 1, output =
   # (!monitored)
   monitor(object$model(), variable_names, type = "s")
 
-  ## build smc sampler if (!rbiips('is_sampler_built', object$model()$ptr()))
-  ## rbiips('build_smc_sampler', object$model()$ptr(), FALSE)
+  ## build smc sampler 
+  # if (!rbiips('is_sampler_built', object$model()$ptr()))
+  #   rbiips('build_smc_sampler', object$model()$ptr(), FALSE)
 
   ## Get sample and log likelihood from PIMH object
   sample <- object$sample()

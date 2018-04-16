@@ -193,7 +193,7 @@ biips_build_sampler <- function(object, ...) UseMethod("biips_build_sampler")
 #' @param proposal string. The type of proposal used by the SMC algorithm.
 #'   Possible values are \code{'auto'} and \code{'prior'}. \code{'auto'} selects the
 #'   best sampler among available ones automatically. \code{'prior'} forces
-#'   asignment of the prior sampler to every node. \code{'prior'} switches off
+#'   assignment of the prior sampler to every node. \code{'prior'} switches off
 #'   lots of instructions and can speed up the startup of the SMC for large
 #'   models. (default = \code{'auto'}).
 #'

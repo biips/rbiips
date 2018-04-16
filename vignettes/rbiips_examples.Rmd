@@ -1,5 +1,5 @@
 ---
-title: 'Quick examples of rbiips usage'
+title: 'rbiips example'
 author: 'Adrien Todeschini, François Caron'
 date: '`r Sys.Date()`'
 output:
@@ -8,7 +8,7 @@ output:
     fig_width: 7
     fig_height: 5
 vignette: >
-  %\VignetteIndexEntry{Quick examples of rbiips usage}
+  %\VignetteIndexEntry{rbiips example}
   %\VignetteEngine{knitr::rmarkdown}
   %\usepackage[utf8]{inputenc}
 ---
@@ -17,7 +17,7 @@ This vignette gathers the examples used in the rbiips reference manual.
 
 ```{r}
 set.seed(0)
-require(rbiips)
+library(rbiips)
 ```
 
 # Add custom functions and distributions to BUGS language
@@ -286,11 +286,11 @@ out_sens <- biips_smc_sensitivity(model, list(logtau = logtau_val), n_part)
 
 par(mfrow = c(2, 1))
 plot(logtau_val, out_sens$log_marg_like, type = 'l', col = 'blue', 
-     xlab = 'logtau', ylab = 'log p(y|logtau) ', main = 'SMC sensitivity')
+     xlab = 'logtau', ylab = 'log p(y | logtau) ', main = 'SMC sensitivity')
 points(data$logtau, min(out_sens$log_marg_like), pch = 17, col = 'green')
 
 plot(logtau_val, out_sens$log_marg_like_pen, type = 'l', col = 'blue', 
-     xlab = 'logtau', ylab = 'log p(y|logtau) + log p(logtau)')
+     xlab = 'logtau', ylab = 'log p(y, logtau)')
 plml <- out_sens$log_marg_like_pen
 ymin <- min(plml[is.finite(plml)])
 points(data$logtau, ymin, pch = 17, col = 'green')
@@ -307,11 +307,13 @@ data <- list(tmax = 10, p = c(.5, .5), logtau_true = log(1))
 model <- biips_model(modelfile, data)
 
 n_part <- 50
+n_burn <- 50
+n_iter <- 50
 obj_pmmh <- biips_pmmh_init(model, 'logtau', latent_names = c('x', 'c[2:10]'), 
                             inits = list(logtau = -2))  # Initialize
 is.pmmh(obj_pmmh)
-out_pmmh_burn <- biips_pmmh_update(obj_pmmh, 100, n_part)  # Burn-in
-out_pmmh <- biips_pmmh_samples(obj_pmmh, 100, n_part, thin = 1)  # Samples
+out_pmmh_burn <- biips_pmmh_update(obj_pmmh, n_burn, n_part)  # Burn-in
+out_pmmh <- biips_pmmh_samples(obj_pmmh, n_iter, n_part, thin = 1)  # Samples
 ```
 
 Manipulate `mcmcarray.list` object
@@ -354,7 +356,7 @@ plot(table_pmmh_c)
 ```{r}
 par(mfrow = c(2, 2))
 plot(c(out_pmmh_burn$log_marg_like_pen, out_pmmh$log_marg_like_pen), type = 'l',
-  col = 'blue', xlab = 'PMMH iteration', ylab = 'log p(y|logtau) + log p(logtau)')
+  col = 'blue', xlab = 'PMMH iteration', ylab = 'log p(y, logtau)')
 
 plot(out_pmmh$logtau[1, ], type = 'l', col = 'blue', 
      xlab = 'PMMH iteration', ylab = 'logtau')

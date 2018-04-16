@@ -1,6 +1,6 @@
 Encoding: UTF-8
 Package: rbiips
-Version: 0.11.0
+Version: 0.11.9000
 Title: Bayesian Inference with Interacting Particle Systems
 Authors@R: c(
     person("Adrien", "Todeschini", email = "adrien.todeschini@gmail.com", role = c("aut", "cre")),
@@ -24,7 +24,7 @@ Suggests:
     rmarkdown
 SystemRequirements: GNU make
 License: GPL-3
-Copyright: Copyright (C) Inria, 2012-2017
+Copyright: Copyright (C) Inria, 2012-2018
 URL: https://biips.github.io/rbiips, https://github.com/biips/rbiips
 BugReports: https://github.com/biips/rbiips/issues
 Imports: Rcpp (>= 0.11.0)
